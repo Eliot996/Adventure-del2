@@ -58,19 +58,45 @@ public class Adventure {
                 if (userInput.startsWith("drop ")){
                     userInput = userInput.substring(5);
                     System.out.println("You have dropped" + player.dropItem(userInput).getShortName());
+            }else
+
+                if (userInput.startsWith("inventory")) {
+                    System.out.println(player.getFormattedInventory());
+                }
+                else
+
+                if (userInput.startsWith("inspect ")){
+                    userInput = userInput.substring(8);
+                    System.out.println(inspect(userInput));
                 }
         }
     }
 
     public String look(){
-        return player.getCurrentRoom().getDescription() + player.getCurrentRoom().getItems();
+        return player.getCurrentRoom().getDescription() + "\n" +
+                player.getCurrentRoom().getItems();
     }
 
-    public String inspect(){
-        return null;
+    public String inspect(String itemName){
+        for (Item item : player.getItemsInInventory()) { // loops through the arrayList itemsInInventory, and set item to the current item
+            if (item.getShortName().equalsIgnoreCase(itemName)){ //check if it is in item with the shortName of itemName
+                return item.getDescription(); //returns the description of the item.
+            }
+        }
+
+        /*   NOTE TIL GÜLER
+        for (int i = 0; i < player.getItemsInInventory().size(); i++) {
+            if (player.getItemsInInventory().get(i).getShortName().equalsIgnoreCase(itemName)){ //check if it is in item with the shortName of itemName
+                return player.getItemsInInventory().get(i).getDescription(); //returns the description of the item.
+            }
+        }
+         */
+
+        return "There is no item by that name in your inventory";
     }
 
     public String helpPlayer(){ // Could be done better, but for right now, this works OK.
+        // TODO: add inventory, take, drop, info
         return Color.BRIGHT_GREEN + """
                 Here is some help for you. Hopefully this will make your journey easier:
                 1) To move in and out of different rooms, combine 'go' with a direction,

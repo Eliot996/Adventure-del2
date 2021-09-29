@@ -40,9 +40,16 @@ public class Player {
         return info.toString();
     }
 
-    //placeholder TODO: add inventory to player
-    public String getInventory(){
-        return null;
+    public String getFormattedInventory(){
+        if (itemsInInventory.size() > 0){
+            StringBuilder items = new StringBuilder("You have these items in your inventory:\n");
+
+            for (Item item : itemsInInventory) {
+                items.append(item.getLongName()).append("\n");
+            }
+            return items.toString();
+        }
+        return "You don't have any items in your inventory. Try picking somthing up with the 'take' command";
     }
 
     public Item dropItem (String itemName){
@@ -66,6 +73,10 @@ public class Player {
         }
 
         return null;
+    }
+
+    public ArrayList<Item> getItemsInInventory() {
+        return itemsInInventory;
     }
 
     public String getPlayerName() {

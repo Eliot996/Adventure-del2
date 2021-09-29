@@ -60,6 +60,14 @@ public class Map {
         map[7].setWest(map[6]);
         map[7].setNorth(map[4]);
         map[8].setWest(map[7]);
+
+
+        map[1].addItem(new Item("gun","agent 007's gun", "This gun will kill with skill"));
+        map[4].addItem(new Item("tressure","a jar of dirt", "you've gotten a jar of dirt!"));
+        map[5].addItem(new Item("posion","posion to heal", "This magical posion will heal your injuries"));
+        map[6].addItem(new Item("pepsi max","a cold can of pepsi max", "This will quench your thirst"));
+        map[7].addItem(new Item("whip","a leather whip", "wipe out your enemies"));
+        map[8].addItem(new Item("'tressue'","a wannabe jar of dirt", "maybe you've the jar of dirt..."));
     }
 
     public Room[] getMap() {

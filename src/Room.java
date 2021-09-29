@@ -65,7 +65,7 @@ public class Room {
         return name;
     }
 
-    public String getDescription() {
+    public String getDescription() { // TODO: needs to be changed to only returning the description
         StringBuilder returnString = new StringBuilder(name + "\n");
 
         if (!hasBeenvisited){

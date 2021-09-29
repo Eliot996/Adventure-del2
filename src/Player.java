@@ -33,7 +33,9 @@ public class Player {
 
     // TODO: add info to getInfo
     public String getInfo(){
-        return null;
+        StringBuilder info = new StringBuilder();
+        info.append("Health: \t" + HP + "/" + maxHP);
+        return info.toString();
     }
 
     //placeholder TODO: add inventory to player

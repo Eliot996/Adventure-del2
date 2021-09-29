@@ -30,20 +30,16 @@ public class Adventure {
             if(userInput.startsWith("go")){
                 userInput = userInput.substring(3);
                 System.out.println(player.goTo(userInput));
-            }
-
-            if(userInput.startsWith("exit")){
+            }else if(userInput.startsWith("exit")){
                 System.out.println(Color.BRIGHT_RED + "Leaving already? :(");
                 System.out.println("Hopefully we'll see each other again :) ");
                 gameActive = false;
-            }
-
-            if(userInput.startsWith("look")){
+            }else if(userInput.startsWith("look")) {
                 System.out.println(look());
-            }
-
-            if(userInput.startsWith("help")){
+            }else if(userInput.startsWith("help")){
                 System.out.println(helpPlayer());
+            }else if(userInput.startsWith("info")){
+                System.out.println(player.getInfo());
             }
         }
     }

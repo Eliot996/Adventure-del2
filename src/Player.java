@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class Player {
 
     private String playerName;
     private int HP;
     private int maxHP = 5;
     private Room currentRoom;
-
+    private ArrayList<Item> itemsInInventory = new ArrayList<>();
 
     public Player(){
         this.HP = maxHP;
@@ -40,6 +42,29 @@ public class Player {
 
     //placeholder TODO: add inventory to player
     public String getInventory(){
+        return null;
+    }
+
+    public Item dropItem (String itemName){
+        for (Item item : itemsInInventory) {
+            if (item.getShortName().equalsIgnoreCase(itemName)){
+                itemsInInventory.remove(item);
+                currentRoom.addItem(item);
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public Item takeItem (String itemName){
+        for (Item item : currentRoom.getItemsInRoom()) {
+            if (item.getShortName().equalsIgnoreCase(itemName)){
+                currentRoom.removeItem(item);
+                itemsInInventory.add(item);
+                return item;
+            }
+        }
+
         return null;
     }
 

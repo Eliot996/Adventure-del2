@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room {
 
     private Room north;
@@ -7,10 +9,40 @@ public class Room {
     private final String name;
     private final String description;
     private boolean hasBeenvisited;
+    private final ArrayList<Item> itemsInRoom = new ArrayList<>();
 
     public Room(String name, String description){
         this.name = name;
         this.description = description;
+    }
+
+    public Item addItem(Item item){
+        itemsInRoom.add(item);
+        return item;
+    }
+
+    public Item removeItem(Item item){
+        if (itemsInRoom.contains(item)){
+            itemsInRoom.remove(item);
+            return item;
+        }
+        return null;
+    }
+
+    public String getItems(){
+        if (itemsInRoom.size() > 0) {
+            StringBuilder items = new StringBuilder("You found these items:\n");
+
+            for (Item item : itemsInRoom) {
+                items.append(item.getLongName()).append("\n");
+            }
+            return items.toString();
+        }
+        return "You cannot seem to find any items in this room";
+    }
+
+    public ArrayList<Item> getItemsInRoom() {
+        return itemsInRoom;
     }
 
     public Room getNorth() {

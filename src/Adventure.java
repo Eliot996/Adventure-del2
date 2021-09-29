@@ -48,12 +48,26 @@ public class Adventure {
 
                 if (userInput.startsWith("info")){
                 System.out.println(player.getInfo());
-            }
+            }else
+
+                if (userInput.startsWith("take ")){
+                userInput = userInput.substring(5);
+                System.out.println("You have taken " + player.takeItem(userInput).getShortName());
+            }else
+
+                if (userInput.startsWith("drop ")){
+                    userInput = userInput.substring(5);
+                    System.out.println("You have dropped" + player.dropItem(userInput).getShortName());
+                }
         }
     }
 
     public String look(){
         return player.getCurrentRoom().getDescription() + player.getCurrentRoom().getItems();
+    }
+
+    public String inspect(){
+        return null;
     }
 
     public String helpPlayer(){ // Could be done better, but for right now, this works OK.

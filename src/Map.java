@@ -18,7 +18,7 @@ public class Map {
 
         map[3] = new Room("The dungeon",
                 "oh boy... this room looks similar to the basement, but feels way worse to be " +
-                "in here. If you didn't like the first room, then you'll definitely hate this room.");
+                "in. If you didn't like the first room, then you'll definitely hate this room.");
 
         map[4] = new Room("The magical room",
                 "Congratulations! You have found the magical room, well done player \uD83D\uDC4F");
@@ -27,7 +27,7 @@ public class Map {
                 "There are a bunch of dangerous chemicals scattered around this room. " +
                 "Be careful, you could harm yourself.");
 
-        map[6] = new Room("The safe room",
+        map[6] = new Room(Color.RESET_COLOR + "The safe room",
                 "Can you believe that? Finally a room that is cozy and safe." +
                 " There are even some food and drinks to give you some well-deserved energy! ❤");
 

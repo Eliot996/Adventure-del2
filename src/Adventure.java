@@ -62,13 +62,13 @@ public class Adventure {
 
                 if (userInput.startsWith("inventory")) {
                     System.out.println(player.getFormattedInventory());
-                }
-                else
+                }else
 
                 if (userInput.startsWith("inspect ")){
                     userInput = userInput.substring(8);
                     System.out.println(inspect(userInput));
                 }
+
                 else{
                     System.out.println("I don't understand that");
                 }

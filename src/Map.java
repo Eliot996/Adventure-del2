@@ -107,7 +107,7 @@ public class Map {
         map[6].addItem(new Item("pepsi max","a cold can of pepsi max", "This will quench your thirst"));
         map[6].addItem(new Item("Cinnamon bun","a warm and delicious cinnamon bun", "This will "));
         map[7].addItem(new Item("whip","a leather whip", "wipe out your enemies"));
-        map[8].addItem(new Item("'treasure'","a wannabe jar of dirt", "maybe you've the jar of dirt... maybe you don't"));
+        map[8].addItem(new Item("treasure","a wannabe jar of dirt", "maybe you've the jar of dirt... maybe you don't"));
     }
 
     public Room[] getMap() {

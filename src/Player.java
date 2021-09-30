@@ -49,7 +49,7 @@ public class Player {
             }
             return items.toString();
         }
-        return "You don't have any items in your inventory. Try picking somthing up with the 'take' command";
+        return "You don't have any items in your inventory. Try picking something up with the 'take' command";
     }
 
     public Item dropItem (String itemName){

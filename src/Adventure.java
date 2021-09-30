@@ -60,7 +60,7 @@ public class Adventure {
                     System.out.println("You have dropped " + player.dropItem(userInput).getShortName());
             }else
 
-                if (userInput.startsWith("inventory")) {
+                if (userInput.startsWith("inventory") || userInput.startsWith("inv")) {
                     System.out.println(player.getFormattedInventory());
                 }else
 

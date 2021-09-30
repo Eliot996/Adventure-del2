@@ -108,7 +108,7 @@ public class Map {
 
 
         //Added different items to different rooms
-        map[1].addItem(new Item("gun","agent 007's gun", "This gun will kill with skill", 10));
+        map[1].addItem(new Item("gun","agent 007's gun", "This gun will kill with skill", 5));
         map[4].addItem(new Item("treasure","a jar of dirt", "you've gotten a jar of dirt!", 1));
         map[5].addItem(new Item("potion","potion to heal", "This magical potion will heal your injuries", 2));
         map[6].addItem(new Item("pepsi max","a cold can of pepsi max", "This will quench your thirst", 5));

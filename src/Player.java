@@ -6,7 +6,8 @@ public class Player {
     private int HP;
     private int maxHP = 5;
     private Room currentRoom;
-     int weightLimit = 50;
+    Room currentRoom2;
+     int weightLimit = 10;
     private ArrayList<Item> itemsInInventory = new ArrayList<>();
 
     public Player(){
@@ -74,6 +75,17 @@ public class Player {
         }
 
         return null;
+    }
+
+    public Boolean weightLimitOnItem(Item item){
+        int currentItemWeight = 0;
+        for (int i = 0; i < itemsInInventory.size(); i++) {
+            currentItemWeight += itemsInInventory.get(i).getWeight();
+            if(currentItemWeight>=weightLimit){
+                return false;
+            }
+        }
+        return true;
     }
 
     public ArrayList<Item> getItemsInInventory() {

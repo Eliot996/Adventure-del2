@@ -2,7 +2,7 @@ public class Item {
     private final String shortName;
     private final String longName;
     private final String description;
-    private final int weight;
+    private int weight;
 
     public Item(String shortName, String longName, String description, int weight){
         this.shortName = shortName;
@@ -21,5 +21,13 @@ public class Item {
 
     public String getDescription() {
         return description;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight){
+        this.weight = weight;
     }
 }

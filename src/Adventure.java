@@ -1,3 +1,5 @@
+import com.sun.jdi.Value;
+
 import java.util.Scanner;
 
 public class Adventure {
@@ -52,7 +54,8 @@ public class Adventure {
 
                 if (userInput.startsWith("take ")){
                 userInput = userInput.substring(5);
-                System.out.println("You have taken " + player.takeItem(userInput).getShortName());
+                //System.out.println("You have taken " + player.takeItem(userInput).getShortName());
+                   take(userInput);
             }else
 
                 if (userInput.startsWith("drop ")){
@@ -96,6 +99,17 @@ public class Adventure {
          */
 
         return "There is no item by that name in your inventory";
+    }
+
+    public void take(String userInput){
+        Item item = player.takeItem(userInput);
+        if(item != null) {
+            if (player.weightLimitOnItem(item)) {
+                System.out.println("you've picked up " + item.getShortName());
+            } else {
+                System.out.println("this exceeds your weight limit");
+            }
+        }
     }
 
     public String helpPlayer(){ // Could be done better, but for right now, this works OK.

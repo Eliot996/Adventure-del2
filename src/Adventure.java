@@ -69,6 +69,9 @@ public class Adventure {
                     userInput = userInput.substring(8);
                     System.out.println(inspect(userInput));
                 }
+                else{
+                    System.out.println("I don't understand that");
+                }
         }
     }
 

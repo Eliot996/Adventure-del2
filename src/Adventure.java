@@ -101,8 +101,13 @@ public class Adventure {
                 Here is some help for you. Hopefully this will make your journey easier:
                 1) To move in and out of different rooms, combine 'go' with a direction,
                    such as north, south, east or west, or simply use the starting letter of the direction.
-                5) type 'look', to get a description of the room you are in.
-                6) type 'exit', to end the game.
+                2) Type 'look', to get a description of the room you are in.
+                3) Type 'exit', to end the game.
+                4) Type 'info', to get player information. 
+                5) Type 'take', to add an item to your inventory. 
+                6) Type 'drop', to drop an item from your inventory. 
+                7) Type 'inventory', to see the list of items that you've collected. 
+                8) Type 'inspect', to get a description of the item. 
                 I wish you the best of luck!
                """;
     }

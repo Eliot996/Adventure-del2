@@ -2,11 +2,13 @@ public class Item {
     private final String shortName;
     private final String longName;
     private final String description;
+    private final int weight;
 
-    public Item(String shortName, String longName, String description){
+    public Item(String shortName, String longName, String description, int weight){
         this.shortName = shortName;
         this.longName = longName;
         this.description = description;
+        this.weight = weight;
     }
 
     public String getShortName() {

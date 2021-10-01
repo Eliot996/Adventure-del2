@@ -73,35 +73,53 @@ public class Map {
         map[25] = new Room("The storage room", "...");
 
 
+        //Connected room1 with room2.
+        //Connected room2 with room3 and room4.
+        //Connected room4 with room5 and room6.
         map[0].setWest(map[1]);
         map[1].setNorth(map[2]);
         map[1].setSouth(map[3]);
         map[3].setEast(map[4]);
         map[3].setSouth(map[5]);
 
+        //Connected room4 with room26.
+        //Connected room3 with room10, room7 and room17.
+        //Connected room7 with room8.
         map[3].setWest(map[25]);
         map[2].setNorth(map[9]);
         map[2].setEast(map[6]);
         map[2].setWest(map[16]);
         map[6].setEast(map[7]);
 
+        //Connected room7 with room13.
+        //Connected room8 with room9.
+        //Connected room13 with room12.
+        //Connected room12 with room11 and room14.
         map[6].setNorth(map[12]);
         map[7].setNorth(map[8]);
         map[12].setWest(map[11]);
         map[11].setSouth(map[10]);
         map[11].setWest(map[13]);
 
+        //Connected room14 with room15, room16 and room18.
+        //Connected room16 with room17.
+        //Connected room18 with room19.
         map[13].setNorth(map[14]);
         map[13].setSouth(map[15]);
         map[15].setSouth(map[16]);
         map[13].setWest(map[17]);
         map[17].setNorth(map[18]);
 
+        //Connected room18 with room20.
+        //Connected room20 with room21.
+        //Connected room 21 with room22 and room23.
         map[17].setSouth(map[19]);
         map[19].setSouth(map[20]);
         map[20].setWest(map[21]);
         map[20].setSouth(map[22]);
 
+        //Connected room23 with room24 and room25.
+        //Connected room25 with room26.
         map[22].setWest(map[23]);
         map[22].setEast(map[24]);
         map[24].setNorth(map[25]);

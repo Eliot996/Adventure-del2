@@ -7,7 +7,7 @@ public class Map {
         map = new Room[26];
 
         //Creating the room objects
-        map[0] = new Room("Sleeping chambers", "...");
+        map[0] = new Room("Sleeping chambers", "Cold and dark.");
 
         map[1] = new Room("Corridor2", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
@@ -18,21 +18,22 @@ public class Map {
         map[3] = new Room("Corridor3", "This is a long and dimly lit passage, which may lead to several " +
                 "different rooms.");
 
-        map[4] = new Room("The catacombs", "...");
+        map[4] = new Room("The catacombs", "Dimly lit, nerve wracking and unwelcoming. Human bones and skulls are " +
+                "dispersed all around.");
 
         map[5] = new Room("Lavatory", "This room contains a toilet that is used by the entire castle. As you would expect, " +
                 "it smells disgusting ");
 
         map[6] = new Room("The oak room", "...");
 
-        map[7] = new Room("The royal chambers", "This room is decorated with expensive paintings and accessories " +
-                "");
+        map[7] = new Room("The royal chambers", "This room is decorated with expensive paintings and accessories. " +
+                "Beautiful brass chandelier hanging from the ceiling.");
 
-        map[8] = new Room("Boudoirs", "");
+        map[8] = new Room("Boudoirs", "...");
 
-        map[9] = new Room("The throne room", "A luxurious room. ");
+        map[9] = new Room("The throne room", "A luxurious room with a large yet elegant looking throne in the middle");
 
-        map[10] = new Room("Oratory", "...");
+        map[10] = new Room("Oratory", "A small room reserved for private worship with an altar and pews.");
 
         map[11] = new Room("Corridor4", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
@@ -52,17 +53,18 @@ public class Map {
         map[17] = new Room("Corridor6", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
 
-        map[18] = new Room("The vault", "...");
+        map[18] = new Room("The vault", "Extraordinary room filled with luxurious items. " +
+                "The treasure must be in here somewhere :D");
 
         map[19] = new Room("Royal mages quarters", "There are spell books scattered everywhere and countless potions " +
                 "in every corner of the room. I could be extra careful in here. ");
 
-        map[20] = new Room("The great hall", "A large and beautiful hall. The stone walls are decorated with magnificent " +
+        map[20] = new Room("The great hall", "A large and stunning hall. The stone walls are decorated with magnificent " +
                 "paintings");
 
-        map[21] = new Room("The entrance", "There is a large wooden gate.");
+        map[21] = new Room("The entrance", "There is a large wooden gate with a wrought iron chandelier hanging from the loft.");
 
-        map[22] = new Room("The kitchen", " ");
+        map[22] = new Room("The kitchen", "Rusty and odd shaped pots hanging on the walls.");
 
         map[23] = new Room("The pantry", "...");
 
@@ -108,13 +110,12 @@ public class Map {
 
 
         //Added different items to different rooms
-        map[1].addItem(new Item("gun","agent 007's gun", "This gun will kill with skill", 5));
-        map[4].addItem(new Item("treasure","a jar of dirt", "you've gotten a jar of dirt!", 1));
-        map[5].addItem(new Item("potion","potion to heal", "This magical potion will heal your injuries", 2));
-        map[6].addItem(new Item("pepsi max","a cold can of pepsi max", "This will quench your thirst", 5));
-        map[6].addItem(new Item("Cinnamon bun","a warm and delicious cinnamon bun", "This will ", 20));
-        map[7].addItem(new Item("whip","a leather whip", "wipe out your enemies", 5));
-        map[8].addItem(new Item("treasure","a wannabe jar of dirt", "maybe you've the jar of dirt", 8));
+        map[16].addItem(new Item("sword","a really heavy and shiny sword", "This sword will kill with skill", 7));
+        map[18].addItem(new Item("treasure","a jar of gold", "you've gotten the jar of gold!", 15));
+        map[19].addItem(new Item("potion","potion to heal", "This magical potion will heal your injuries", 10));
+        map[22].addItem(new Item("beer","a cold pint of beer", "This will quench your thirst", 3));
+        map[22].addItem(new Item("tart","a warm and delicious tart", "This will give you with some well-deserved energy", 3));
+
     }
 
     public Room[] getMap() {

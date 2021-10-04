@@ -17,6 +17,7 @@ public class Adventure {
     public void play(){
 
         boolean gameActive = true;
+        //Intro to the game.
         System.out.println(Color.VIBRANT_PURPLE + "Welcome to the adventure game!" +
                 "\nThere are many different rooms to travel between, some rooms are better than others," +
                 " but your main goal should be to find the 'the vault'. " +
@@ -115,7 +116,7 @@ public class Adventure {
                 6) Type 'drop', to drop an item from your inventory.
                 7) Type 'inventory' or 'inv', to see the list of items that you've collected.
                 8) Type 'inspect', to get a description of the item.
-                I wish you the best of luck!
+                I wish you the best of luck! xoxo, Gossip girl \uD83D\uDE09
                """;
     }
 

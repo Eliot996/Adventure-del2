@@ -48,7 +48,7 @@ public class Map {
         map[15] = new Room("The court yard", "A roofless area that is enclosed by tall walls, that are made with " +
                 "stones.");
 
-        map[16] = new Room("The guard room", "Be careful in here...don't hurt yourself ;)");
+        map[16] = new Room("The guard room", "Be careful in here...don't hurt yourself \uD83D\uDE09");
 
         map[17] = new Room("Corridor6", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
@@ -127,11 +127,11 @@ public class Map {
 
 
         //Added different items to different rooms
-        map[16].addItem(new Item("sword","a really heavy and shiny sword", "This sword will kill with skill", 7));
+        map[16].addItem(new Item("sword","a really heavy and shiny sword", "This sword will kill with skill.", 7));
         map[18].addItem(new Item("treasure","a jar of gold", "you've gotten the jar of gold!", 15));
-        map[19].addItem(new Item("potion","potion to heal", "This magical potion will heal your injuries", 10));
-        map[22].addItem(new Item("beer","a cold pint of beer", "This will quench your thirst", 3));
-        map[22].addItem(new Item("tart","a warm and delicious tart", "This will give you with some well-deserved energy", 3));
+        map[19].addItem(new Item("potion","potion to heal", "This magical potion will heal your injuries.", 10));
+        map[22].addItem(new Item("beer","a cold pint of beer", "This will quench your thirst.", 3));
+        map[22].addItem(new Item("tart","a warm and delicious tart", "This will give you some well-deserved energy.", 3));
 
     }
 

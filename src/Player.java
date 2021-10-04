@@ -8,6 +8,7 @@ public class Player {
     private Room currentRoom;
     private int currentweight;
     private final int weightLimit = 25;
+    //int weightLimit = 25;
     private ArrayList<Item> itemsInInventory = new ArrayList<>();
 
     public Player(){
@@ -68,12 +69,9 @@ public class Player {
     public Item takeItem (String itemName){
         for (Item item : currentRoom.getItemsInRoom()) {
             if (item.getShortName().equalsIgnoreCase(itemName)){
-                if (currentweight + item.getWeight() <= weightLimit) {
-                    currentRoom.removeItem(item);
-                    itemsInInventory.add(item);
-                    currentweight += item.getWeight();
-                    return item;
-                }
+                currentRoom.removeItem(item);
+                itemsInInventory.add(item);
+                return item;
             }
         }
 

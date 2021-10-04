@@ -24,12 +24,12 @@ public class Map {
         map[5] = new Room("Lavatory", "This room contains a toilet that is used by the entire castle. As you would expect, " +
                 "it smells disgusting ");
 
-        map[6] = new Room("The oak room", "...");
+        map[6] = new Room("The oak room", "The room is filled with decoration made from oak.");
 
         map[7] = new Room("The royal chambers", "This room is decorated with expensive paintings and accessories. " +
                 "Beautiful brass chandelier hanging from the ceiling.");
 
-        map[8] = new Room("Boudoirs", "...");
+        map[8] = new Room("Boudoirs", "well-lit, safe and comfortable room.");
 
         map[9] = new Room("The throne room", "A luxurious room with a large yet elegant looking throne in the middle");
 
@@ -38,7 +38,7 @@ public class Map {
         map[11] = new Room("Corridor4", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
 
-        map[12] = new Room("The observatory", "...");
+        map[12] = new Room("The observatory", "This room is for observing something XD");
 
         map[13] = new Room("Corridor5", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
@@ -48,7 +48,7 @@ public class Map {
         map[15] = new Room("The court yard", "A roofless area that is enclosed by tall walls, that are made with " +
                 "stones.");
 
-        map[16] = new Room("The guard room", "...");
+        map[16] = new Room("The guard room", "Be careful in here...don't hurt yourself ;)");
 
         map[17] = new Room("Corridor6", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
@@ -66,11 +66,12 @@ public class Map {
 
         map[22] = new Room("The kitchen", "Rusty and odd shaped pots hanging on the walls.");
 
-        map[23] = new Room("The pantry", "...");
+        map[23] = new Room("The pantry", "Shelves with neatly stored jars.");
 
-        map[24] = new Room("The servant chambers", "...");
+        map[24] = new Room("The servant chambers", "There are a few beds in here, mainly for the servants but if you are " +
+                "tired, take a nap :D");
 
-        map[25] = new Room("The storage room", "...");
+        map[25] = new Room("The storage room", "Dried meats hanging from the ceiling.");
 
 
         //Connected room1 with room2.

@@ -59,7 +59,6 @@ public class Player {
             if (item.getShortName().equalsIgnoreCase(itemName)){
                 itemsInInventory.remove(item);
                 currentRoom.addItem(item);
-                currentweight -= item.getWeight();
                 return item;
             }
         }

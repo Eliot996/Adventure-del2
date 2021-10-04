@@ -34,17 +34,17 @@ public class Adventure {
                 System.out.println(player.goTo(userInput));
             }else
 
-                if (userInput.startsWith("exit")){
+                if (userInput.startsWith("exit") || userInput.startsWith("e")){
                 System.out.println(Color.BRIGHT_RED + "Leaving already? :(");
                 System.out.println("Hopefully we'll see each other again :) ");
                 gameActive = false;
             }else
 
-                if (userInput.startsWith("look")) {
+                if (userInput.startsWith("look") || userInput.startsWith("l")) {
                 System.out.println(look());
             }else
 
-                if (userInput.startsWith("help")){
+                if (userInput.startsWith("help") || userInput.startsWith("h")){
                 System.out.println(helpPlayer());
             }else
 
@@ -64,6 +64,7 @@ public class Adventure {
                 }
 
             }else
+
                 if (userInput.startsWith("drop ")){
                     userInput = userInput.substring(5);
                     System.out.println("You have dropped " + player.dropItem(userInput).getShortName());
@@ -96,8 +97,6 @@ public class Adventure {
             }
         }
 
-        return "There is no item by that name in your inventory";
-
         /*   NOTE TIL GÜLER
         for (int i = 0; i < player.getItemsInInventory().size(); i++) {
             if (player.getItemsInInventory().get(i).getShortName().equalsIgnoreCase(itemName)){ //check if it is in item with the shortName of itemName
@@ -105,6 +104,19 @@ public class Adventure {
             }
         }
          */
+
+        return "There is no item by that name in your inventory";
+    }
+
+    public void take(String userInput){
+        Item item = player.takeItem(userInput);
+        if(item != null) {
+            if (player.weightLimitOnItem(item)) {
+                System.out.println("you've picked up " + item.getShortName());
+            } else {
+                System.out.println("this exceeds your weight limit");
+            }
+        }
     }
 
     public String helpPlayer(){ // Could be done better, but for right now, this works OK.
@@ -113,12 +125,12 @@ public class Adventure {
                 Here is some help for you. Hopefully this will make your journey easier:
                 1) To move in and out of different rooms, combine 'go' with a direction,
                    such as north, south, east or west, or simply use the starting letter of the direction.
-                2) Type 'look', to get a description of the room you are in.
-                3) Type 'exit', to end the game.
-                4) Type 'info', to get player information. 
+                2) Type 'look' or 'l', to get a description of the room you are in.
+                3) Type 'exit' or 'e', to end the game.
+                4) Type 'info', to get player information.
                 5) Type 'take', to add an item to your inventory. 
                 6) Type 'drop', to drop an item from your inventory. 
-                7) Type 'inventory', to see the list of items that you've collected. 
+                7) Type 'inventory' or 'inv', to see the list of items that you've collected. 
                 8) Type 'inspect', to get a description of the item. 
                 I wish you the best of luck!
                """;

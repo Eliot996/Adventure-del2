@@ -61,10 +61,10 @@ public class Adventure {
                 if (status == 1) {
                     System.out.println("You have taken " + playerItems.get(playerItems.size() - 1).getShortName());
                 }if (status == 0){
-                    System.out.println("This item will exceed your weight limit");
-                }if (status == -1){
                         System.out.println("This item will exceed your weight limit, " +
                                 "please drop an item from your inventory if you wish to take this item.");
+                }if (status == -1){
+                        System.out.println("You cannot find that item");
                     }
 
             }else

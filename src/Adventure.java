@@ -18,8 +18,8 @@ public class Adventure {
         boolean gameActive = true;
         System.out.println(Color.VIBRANT_PURPLE + "Welcome to the adventure game!" +
                 "\nThere are many different rooms to travel between, some rooms are better than others," +
-                " but your main goal should be to find the 'magical room'. " +
-                "\nIf you at any point need assistance, just type 'help' and a useful guide will magically appear" +
+                " but your main goal should be to find the 'the vault'. " +
+                "\nIf you at any point need assistance, just type 'help' or ´h', where a useful guide will magically appear" +
                 "\n I wish you the best of luck! See you on the other side \uD83D\uDE09");
         System.out.println();
         System.out.println(Color.RESET_COLOR + "You are currently in " + player.getCurrentRoom().getDescription());
@@ -58,7 +58,8 @@ public class Adventure {
                 if (item != null) {
                     System.out.println("You have taken " + item.getShortName());
                 }else{
-                    System.out.println("This item will exceed your weight limit");
+                    System.out.println("This item will exceed your weight limit, " +
+                            "please drop an item from your inventory if you wish to take this item.");
                 }
 
             }else
@@ -78,7 +79,7 @@ public class Adventure {
                 }
 
             else{
-                    System.out.println("I don't understand that");
+                    System.out.println("I don't understand that. Please try again :)");
                 }
         }
     }

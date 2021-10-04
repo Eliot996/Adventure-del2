@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Adventure {
@@ -53,13 +54,16 @@ public class Adventure {
                 if (userInput.startsWith("take ")){
                 userInput = userInput.substring(5);
 
-                Item item = player.takeItem(userInput);
+                int status = player.takeItem(userInput);
+                ArrayList<Item> playerItems = player.getItemsInInventory();
 
-                if (item != null) {
-                    System.out.println("You have taken " + item.getShortName());
-                }else{
+                if (status == 1) {
+                    System.out.println("You have taken " + playerItems.get(playerItems.size() - 1).getShortName());
+                }if (status == 0){
                     System.out.println("This item will exceed your weight limit");
-                }
+                }if (status == -1){
+                        System.out.println("That item was not found");
+                    }
 
             }else
 

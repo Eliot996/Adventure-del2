@@ -66,19 +66,24 @@ public class Player {
         return null;
     }
 
-    // Checks
-    public Item takeItem (String itemName){
+    // Checks if item is in the current room, and then if the item will be too heavy in the inventory.
+    // 1: succesfull tranfer
+    // 0: item is to heavy
+    // -1: item was no found
+    public int takeItem (String itemName){
         for (Item item : currentRoom.getItemsInRoom()) {
             if (item.getShortName().equalsIgnoreCase(itemName)){
                 if (weight + item.getWeight() <= weightLimit) {
                     currentRoom.removeItem(item);
                     itemsInInventory.add(item);
                     weight += item.getWeight();
-                    return item;
+                    return 1;
+                }else{
+                    return 0;
                 }
             }
         }
-        return null;
+        return -1;
     }
 
     public ArrayList<Item> getItemsInInventory() {

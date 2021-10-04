@@ -123,7 +123,7 @@ public class Adventure {
                 4) Type 'info', to get player information. 
                 5) Type 'take', to add an item to your inventory. 
                 6) Type 'drop', to drop an item from your inventory. 
-                7) Type 'inventory', to see the list of items that you've collected. 
+                7) Type 'inventory' or 'inv', to see the list of items that you've collected. 
                 8) Type 'inspect', to get a description of the item. 
                 I wish you the best of luck!
                """;

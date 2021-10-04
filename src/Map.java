@@ -125,8 +125,6 @@ public class Map {
         map[24].setNorth(map[25]);
 
 
-
-
         //Added different items to different rooms
         map[16].addItem(new Item("sword","a really heavy and shiny sword", "This sword will kill with skill", 7));
         map[18].addItem(new Item("treasure","a jar of gold", "you've gotten the jar of gold!", 15));

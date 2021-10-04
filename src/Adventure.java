@@ -29,7 +29,7 @@ public class Adventure {
 
         while(gameActive){
             String userInput = input.nextLine().trim().toLowerCase();
-            if(userInput.startsWith("go")){
+            if(userInput.startsWith("go ")){
                 userInput = userInput.substring(3);
                 System.out.println(player.goTo(userInput));
             }else
@@ -54,10 +54,16 @@ public class Adventure {
 
                 if (userInput.startsWith("take ")){
                 userInput = userInput.substring(5);
-                //System.out.println("You have taken " + player.takeItem(userInput).getShortName());
-                   take(userInput);
-            }else
 
+                Item item = player.takeItem(userInput);
+
+                if (item != null) {
+                    System.out.println("You have taken " + item.getShortName());
+                }else{
+                    System.out.println("This item will exceed your weight limit");
+                }
+
+            }else
                 if (userInput.startsWith("drop ")){
                     userInput = userInput.substring(5);
                     System.out.println("You have dropped " + player.dropItem(userInput).getShortName());
@@ -90,6 +96,8 @@ public class Adventure {
             }
         }
 
+        return "There is no item by that name in your inventory";
+
         /*   NOTE TIL GÜLER
         for (int i = 0; i < player.getItemsInInventory().size(); i++) {
             if (player.getItemsInInventory().get(i).getShortName().equalsIgnoreCase(itemName)){ //check if it is in item with the shortName of itemName
@@ -97,19 +105,6 @@ public class Adventure {
             }
         }
          */
-
-        return "There is no item by that name in your inventory";
-    }
-
-    public void take(String userInput){
-        Item item = player.takeItem(userInput);
-        if(item != null) {
-            if (player.weightLimitOnItem(item)) {
-                System.out.println("you've picked up " + item.getShortName());
-            } else {
-                System.out.println("this exceeds your weight limit");
-            }
-        }
     }
 
     public String helpPlayer(){ // Could be done better, but for right now, this works OK.

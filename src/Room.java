@@ -69,7 +69,7 @@ public class Room {
         return description;
     }
 
-    public String visitRoom() { // TODO:
+    public String visitRoom() {
         StringBuilder returnString = new StringBuilder(name + "\n");
 
         if (!hasBeenvisited){

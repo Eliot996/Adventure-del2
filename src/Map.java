@@ -9,13 +9,13 @@ public class Map {
         //Creating the room objects
         map[0] = new Room("Sleeping chambers", "Cold and dark.");
 
-        map[1] = new Room("Corridor2", "This is a long and dimly lit passage, which  may lead to several " +
+        map[1] = new Room("Corridor", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
 
-        map[2] = new Room("Corridor1", "This is a long and dimly lit passage, which may lead to several " +
+        map[2] = new Room("Corridor", "This is a long and dimly lit passage, which may lead to several " +
                 "different rooms.");
 
-        map[3] = new Room("Corridor3", "This is a long and dimly lit passage, which may lead to several " +
+        map[3] = new Room("Corridor", "This is a long and dimly lit passage, which may lead to several " +
                 "different rooms.");
 
         map[4] = new Room("The catacombs", "Dimly lit, nerve wracking and unwelcoming. Human bones and skulls are " +
@@ -35,12 +35,12 @@ public class Map {
 
         map[10] = new Room("Oratory", "A small room reserved for private worship with an altar and pews.");
 
-        map[11] = new Room("Corridor4", "This is a long and dimly lit passage, which  may lead to several " +
+        map[11] = new Room("Corridor", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
 
         map[12] = new Room("The observatory", "This room is for observing something XD");
 
-        map[13] = new Room("Corridor5", "This is a long and dimly lit passage, which  may lead to several " +
+        map[13] = new Room("Corridor", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
 
         map[14] = new Room("The library", "Tall bookshelves, filled with well organized books. This place seems nice to be in.");
@@ -50,7 +50,7 @@ public class Map {
 
         map[16] = new Room("The guard room", "Be careful in here...don't hurt yourself \uD83D\uDE09");
 
-        map[17] = new Room("Corridor6", "This is a long and dimly lit passage, which  may lead to several " +
+        map[17] = new Room("Corridor", "This is a long and dimly lit passage, which  may lead to several " +
                 "different rooms.");
 
         map[18] = new Room("The vault", "Extraordinary room filled with luxurious items. " +

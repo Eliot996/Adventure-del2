@@ -57,7 +57,7 @@ public class Map {
                 "The treasure must be in here somewhere :D");
 
         map[19] = new Room("Royal mages quarters", "There are spell books scattered everywhere and countless potions " +
-                "in every corner of the room. I could be extra careful in here. ");
+                "in every corner of the room. I could be extra careful in here.");
 
         map[20] = new Room("The great hall", "A large and stunning hall. The stone walls are decorated with magnificent " +
                 "paintings");
@@ -127,6 +127,7 @@ public class Map {
 
 
         //Added different items to different rooms
+        map[0].addItem(new Item("flashlight","old ass flashlight", "This will light up your world like nothing else", 7));
         map[16].addItem(new Item("sword","a really heavy and shiny sword", "This sword will kill with skill.", 7));
         map[18].addItem(new Item("treasure","a jar of gold", "you've gotten the jar of gold!", 15));
         map[19].addItem(new Item("potion","potion to heal", "This magical potion will heal your injuries.", 10));

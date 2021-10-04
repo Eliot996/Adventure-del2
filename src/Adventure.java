@@ -116,7 +116,8 @@ public class Adventure {
                 6) Type 'drop', to drop an item from your inventory.
                 7) Type 'inventory' or 'inv', to see the list of items that you've collected.
                 8) Type 'inspect', to get a description of the item.
-                I wish you the best of luck! xoxo, Gossip girl \uD83D\uDE09
+                I wish you the best of luck!
+                XOXO, Gossip girl \uD83D\uDE09
                """;
     }
 

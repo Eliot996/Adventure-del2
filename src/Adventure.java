@@ -1,5 +1,3 @@
-import com.sun.jdi.Value;
-
 import java.util.Scanner;
 
 public class Adventure {
@@ -97,19 +95,10 @@ public class Adventure {
             }
         }
 
-        /*   NOTE TIL GÜLER
-        for (int i = 0; i < player.getItemsInInventory().size(); i++) {
-            if (player.getItemsInInventory().get(i).getShortName().equalsIgnoreCase(itemName)){ //check if it is in item with the shortName of itemName
-                return player.getItemsInInventory().get(i).getDescription(); //returns the description of the item.
-            }
-        }
-         */
-
         return "There is no item by that name in your inventory";
     }
 
-    public String helpPlayer(){ // Could be done better, but for right now, this works OK.
-        // TODO: add inventory, take, drop, info
+    public String helpPlayer(){
         return Color.BRIGHT_GREEN + """
                 Here is some help for you. Hopefully this will make your journey easier:
                 1) To move in and out of different rooms, combine 'go' with a direction,
@@ -117,10 +106,10 @@ public class Adventure {
                 2) Type 'look' or 'l', to get a description of the room you are in.
                 3) Type 'exit' or 'e', to end the game.
                 4) Type 'info', to get player information.
-                5) Type 'take', to add an item to your inventory. 
-                6) Type 'drop', to drop an item from your inventory. 
-                7) Type 'inventory' or 'inv', to see the list of items that you've collected. 
-                8) Type 'inspect', to get a description of the item. 
+                5) Type 'take', to add an item to your inventory.
+                6) Type 'drop', to drop an item from your inventory.
+                7) Type 'inventory' or 'inv', to see the list of items that you've collected.
+                8) Type 'inspect', to get a description of the item.
                 I wish you the best of luck!
                """;
     }

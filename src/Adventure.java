@@ -29,7 +29,7 @@ public class Adventure {
 
         while(gameActive){
             String userInput = input.nextLine().trim().toLowerCase();
-            if(userInput.startsWith("go ")){
+               if(userInput.startsWith("go ")){
                 userInput = userInput.substring(3);
                 System.out.println(player.goTo(userInput));
             }else
@@ -72,14 +72,14 @@ public class Adventure {
 
                 if (userInput.startsWith("inventory") || userInput.startsWith("inv")) {
                     System.out.println(player.getFormattedInventory());
-                }else
+            }else
 
                 if (userInput.startsWith("inspect ")){
                     userInput = userInput.substring(8);
                     System.out.println(inspect(userInput));
                 }
 
-                else{
+            else{
                     System.out.println("I don't understand that");
                 }
         }
@@ -106,17 +106,6 @@ public class Adventure {
          */
 
         return "There is no item by that name in your inventory";
-    }
-
-    public void take(String userInput){
-        Item item = player.takeItem(userInput);
-        if(item != null) {
-            if (player.weightLimitOnItem(item)) {
-                System.out.println("you've picked up " + item.getShortName());
-            } else {
-                System.out.println("this exceeds your weight limit");
-            }
-        }
     }
 
     public String helpPlayer(){ // Could be done better, but for right now, this works OK.

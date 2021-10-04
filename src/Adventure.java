@@ -34,17 +34,17 @@ public class Adventure {
                 System.out.println(player.goTo(userInput));
             }else
 
-                if (userInput.startsWith("exit")){
+                if (userInput.startsWith("exit") || userInput.startsWith("e")){
                 System.out.println(Color.BRIGHT_RED + "Leaving already? :(");
                 System.out.println("Hopefully we'll see each other again :) ");
                 gameActive = false;
             }else
 
-                if (userInput.startsWith("look")) {
+                if (userInput.startsWith("look") || userInput.startsWith("l")) {
                 System.out.println(look());
             }else
 
-                if (userInput.startsWith("help")){
+                if (userInput.startsWith("help") || userInput.startsWith("h")){
                 System.out.println(helpPlayer());
             }else
 
@@ -107,7 +107,7 @@ public class Adventure {
             if (player.weightLimitOnItem(item)) {
                 System.out.println("you've picked up " + item.getShortName());
             } else {
-                System.out.println("this exceeds your weight limit");
+                System.out.println("This exceeds your weight limit. Please drop an item from your inventory.");
             }
         }
     }
@@ -118,9 +118,9 @@ public class Adventure {
                 Here is some help for you. Hopefully this will make your journey easier:
                 1) To move in and out of different rooms, combine 'go' with a direction,
                    such as north, south, east or west, or simply use the starting letter of the direction.
-                2) Type 'look', to get a description of the room you are in.
-                3) Type 'exit', to end the game.
-                4) Type 'info', to get player information. 
+                2) Type 'look' or 'l', to get a description of the room you are in.
+                3) Type 'exit' or 'e', to end the game.
+                4) Type 'info', to get player information.
                 5) Type 'take', to add an item to your inventory. 
                 6) Type 'drop', to drop an item from your inventory. 
                 7) Type 'inventory' or 'inv', to see the list of items that you've collected. 

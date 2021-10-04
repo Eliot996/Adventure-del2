@@ -6,8 +6,7 @@ public class Player {
     private int HP;
     private int maxHP = 5;
     private Room currentRoom;
-    Room currentRoom2;
-     int weightLimit = 25;
+     int weightLimit = 5;
     private ArrayList<Item> itemsInInventory = new ArrayList<>();
 
     public Player(){

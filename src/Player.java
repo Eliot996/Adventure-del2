@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Player {
 
-    private String playerName;
     private int HP;
     private int maxHP = 5;
     private Room currentRoom;

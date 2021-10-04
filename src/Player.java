@@ -66,7 +66,7 @@ public class Player {
     }
 
     // Checks if item is in the current room, and then if the item will be too heavy in the inventory.
-    // 1: succesfull tranfer
+    // 1: successful transfer
     // 0: item is to heavy
     // -1: item was no found
     public int takeItem (String itemName){

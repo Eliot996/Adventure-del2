@@ -6,10 +6,9 @@ public class Player {
     private int HP;
     private int maxHP = 5;
     private Room currentRoom;
-    private int currentweight;
+    private int weight;
     private final int weightLimit = 25;
-    //int weightLimit = 25;
-    private ArrayList<Item> itemsInInventory = new ArrayList<>();
+    private final ArrayList<Item> itemsInInventory = new ArrayList<>();
 
     public Player(){
         this.HP = maxHP;
@@ -36,11 +35,11 @@ public class Player {
         return "You cannot go that direction in this room";
     }
 
+    // returns a formatted string with info about the player
     // TODO: add info to getInfo
     public String getInfo(){
-        StringBuilder info = new StringBuilder();
-        info.append("Health: \t" + HP + "/" + maxHP);
-        return info.toString();
+        return "Health: \t" + HP + "/" + maxHP + "\n" +
+               "Weight: \t" + weight + "/" + weightLimit + "\n";
     }
 
     public String getFormattedInventory(){
@@ -55,6 +54,7 @@ public class Player {
         return "You don't have any items in your inventory. Try picking something up with the 'take' command";
     }
 
+    // drops item from user inventory and adds it to the current room, as well as subtracts the weight of the item from players weight
     public Item dropItem (String itemName){
         for (Item item : itemsInInventory) {
             if (item.getShortName().equalsIgnoreCase(itemName)){
@@ -66,39 +66,23 @@ public class Player {
         return null;
     }
 
+    // Checks
     public Item takeItem (String itemName){
         for (Item item : currentRoom.getItemsInRoom()) {
             if (item.getShortName().equalsIgnoreCase(itemName)){
-                currentRoom.removeItem(item);
-                itemsInInventory.add(item);
-                return item;
+                if (weight + item.getWeight() <= weightLimit) {
+                    currentRoom.removeItem(item);
+                    itemsInInventory.add(item);
+                    weight += item.getWeight();
+                    return item;
+                }
             }
         }
-
         return null;
-    }
-
-    public Boolean weightLimitOnItem(Item item){
-        int currentItemWeight = 0;
-        for (int i = 0; i < itemsInInventory.size(); i++) {
-            currentItemWeight += itemsInInventory.get(i).getWeight();
-            if(currentItemWeight>=weightLimit){
-                return false;
-            }
-        }
-        return true;
     }
 
     public ArrayList<Item> getItemsInInventory() {
         return itemsInInventory;
-    }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
     }
 
     public int getHP() {

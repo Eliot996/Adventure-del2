@@ -10,25 +10,25 @@ public class Player {
     private int energy = 100;
     private final ArrayList<Item> itemsInInventory = new ArrayList<>();
 
-    public Player(){
+    public Player() {
         this.HP = maxHP;
 
     }
 
-    public String goTo(String userInput){
-        if ((userInput.equals("north") || userInput.equals("n")) && getCurrentRoom().hasNorth()){
+    public String goTo(String userInput) {
+        if ((userInput.equals("north") || userInput.equals("n")) && getCurrentRoom().hasNorth()) {
             currentRoom = currentRoom.getNorth();
             return currentRoom.visitRoom();
         }
-        if((userInput.equals("south") || userInput.equals("s")) && getCurrentRoom().hasSouth()){
+        if ((userInput.equals("south") || userInput.equals("s")) && getCurrentRoom().hasSouth()) {
             currentRoom = currentRoom.getSouth();
             return currentRoom.visitRoom();
         }
-        if((userInput.equals("east") || userInput.equals("e")) && getCurrentRoom().hasEast()){
+        if ((userInput.equals("east") || userInput.equals("e")) && getCurrentRoom().hasEast()) {
             currentRoom = currentRoom.getEast();
             return currentRoom.visitRoom();
         }
-        if((userInput.equals("west") || userInput.equals("w")) && getCurrentRoom().hasWest()){
+        if ((userInput.equals("west") || userInput.equals("w")) && getCurrentRoom().hasWest()) {
             currentRoom = currentRoom.getWest();
             return currentRoom.visitRoom();
         }
@@ -37,13 +37,13 @@ public class Player {
 
     // returns a formatted string with info about the player
     // TODO: add info to getInfo
-    public String getInfo(){
+    public String getInfo() {
         return "Health: \t" + HP + "/" + maxHP + "\n" +
-               "Weight: \t" + weight + "/" + weightLimit + "\n";
+                "Weight: \t" + weight + "/" + weightLimit + "\n";
     }
 
-    public String getFormattedInventory(){
-        if (itemsInInventory.size() > 0){
+    public String getFormattedInventory() {
+        if (itemsInInventory.size() > 0) {
             StringBuilder items = new StringBuilder("You have these items in your inventory:\n");
 
             for (Item item : itemsInInventory) {
@@ -55,9 +55,9 @@ public class Player {
     }
 
     // drops item from user inventory and adds it to the current room, as well as subtracts the weight of the item from players weight
-    public Item dropItem (String itemName){
+    public Item dropItem(String itemName) {
         for (Item item : itemsInInventory) {
-            if (item.getShortName().equalsIgnoreCase(itemName)){
+            if (item.getShortName().equalsIgnoreCase(itemName)) {
                 itemsInInventory.remove(item);
                 currentRoom.addItem(item);
                 return item;
@@ -70,15 +70,15 @@ public class Player {
     // 1: successful transfer
     // 0: item is to heavy
     // -1: item was no found
-    public int takeItem (String itemName){
+    public int takeItem(String itemName) {
         for (Item item : currentRoom.getItemsInRoom()) {
-            if (item.getShortName().equalsIgnoreCase(itemName)){
+            if (item.getShortName().equalsIgnoreCase(itemName)) {
                 if (weight + item.getWeight() <= weightLimit) {
                     currentRoom.removeItem(item);
                     itemsInInventory.add(item);
                     weight += item.getWeight();
                     return 1;
-                }else{
+                } else {
                     return 0;
                 }
             }
@@ -98,19 +98,19 @@ public class Player {
         this.HP = HP;
     }
 
-    public int getMaxHP(){
+    public int getMaxHP() {
         return maxHP;
     }
 
-    public void setMaxHP( int energy){
+    public void setMaxHP(int energy) {
         this.maxHP = maxHP;
     }
 
-    public int getEnergy(){
+    public int getEnergy() {
         return energy;
     }
 
-    public void setEnergy( int energy){
+    public void setEnergy(int energy) {
         this.energy = energy;
     }
 

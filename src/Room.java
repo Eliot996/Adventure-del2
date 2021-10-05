@@ -11,25 +11,25 @@ public class Room {
     private boolean hasBeenvisited;
     private final ArrayList<Item> itemsInRoom = new ArrayList<>();
 
-    public Room(String name, String description){
+    public Room(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Item addItem(Item item){
+    public Item addItem(Item item) {
         itemsInRoom.add(item);
         return item;
     }
 
-    public Item removeItem(Item item){
-        if (itemsInRoom.contains(item)){
+    public Item removeItem(Item item) {
+        if (itemsInRoom.contains(item)) {
             itemsInRoom.remove(item);
             return item;
         }
         return null;
     }
 
-    public String getItems(){
+    public String getItems() {
         if (itemsInRoom.size() > 0) {
             StringBuilder items = new StringBuilder("You found these items:\n");
 
@@ -72,7 +72,7 @@ public class Room {
     public String visitRoom() {
         StringBuilder returnString = new StringBuilder(name + "\n");
 
-        if (!hasBeenvisited){
+        if (!hasBeenvisited) {
             returnString.append(description).append("\n");
             hasBeenvisited = true;
         }
@@ -81,46 +81,46 @@ public class Room {
     }
 
     public void setNorth(Room north) {
-        if(this.north == null){
+        if (this.north == null) {
             this.north = north;
             north.setSouth(this);
         }
     }
 
     public void setSouth(Room south) {
-        if(this.south == null){
+        if (this.south == null) {
             this.south = south;
             south.setNorth(this);
         }
     }
 
     public void setWest(Room west) {
-        if(this.west == null){
+        if (this.west == null) {
             this.west = west;
             west.setEast(this);
         }
     }
 
     public void setEast(Room east) {
-        if(this.east == null){
+        if (this.east == null) {
             this.east = east;
             east.setWest(this);
         }
     }
 
-    public boolean hasNorth(){
+    public boolean hasNorth() {
         return north != null;
     }
 
-    public boolean hasSouth(){
+    public boolean hasSouth() {
         return south != null;
     }
 
-    public boolean hasEast(){
+    public boolean hasEast() {
         return east != null;
     }
 
-    public boolean hasWest(){
+    public boolean hasWest() {
         return west != null;
     }
 }

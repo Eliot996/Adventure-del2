@@ -7,6 +7,7 @@ public class Player {
     private Room currentRoom;
     private int weight;
     private final int weightLimit = 25;
+    private int energy = 100;
     private final ArrayList<Item> itemsInInventory = new ArrayList<>();
 
     public Player(){
@@ -101,8 +102,16 @@ public class Player {
         return maxHP;
     }
 
-    public void setMaxHP( int maxHP){
+    public void setMaxHP( int energy){
         this.maxHP = maxHP;
+    }
+
+    public int getEnergy(){
+        return energy;
+    }
+
+    public void setEnergy( int energy){
+        this.energy = energy;
     }
 
     public void setCurrentRoom(Room currentRoom) {

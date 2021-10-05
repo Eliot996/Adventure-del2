@@ -28,9 +28,21 @@ public class Adventure {
         System.out.println("Which direction would you like to go?");
 
         while(gameActive){
+
+            int currentEnergy = player.getEnergy();
+            if(currentEnergy == 50){
+                System.out.println("You seem to be tired. I recommend you take a break.");
+            }else if(currentEnergy == 15){
+                System.out.println("OK, you are officially exhausted. Take a break now or you'll regret it later!");
+            }else if(currentEnergy == 0){
+                System.out.println("too bad, you have no energy left to complete the adventure game. Told you to take a break...");
+                gameActive = false;
+            }
+
             String userInput = input.nextLine().trim().toLowerCase();
                if(userInput.startsWith("go ")){
                 userInput = userInput.substring(3);
+                energyUpdate(-5);
                 System.out.println(player.goTo(userInput));
             }else
 
@@ -81,13 +93,18 @@ public class Adventure {
                 if (userInput.startsWith("inspect ")){
                     userInput = userInput.substring(8);
                     System.out.println(inspect(userInput));
-                }
+                }else
+
+                    if(userInput.startsWith("break") || userInput.startsWith("b")){
+                        takeABreak();
+                    }
 
             else{
                     System.out.println("I don't understand that. Please try again :)");
                 }
         }
     }
+
 
     public String look(){
         return player.getCurrentRoom().getDescription() + "\n" +
@@ -104,6 +121,18 @@ public class Adventure {
         return "There is no item by that name in your inventory";
     }
 
+    //Updates energyUpdate with 25 points.
+    public void takeABreak(){
+        energyUpdate(25);
+    }
+
+    //Updates player energy
+    public void energyUpdate(int energyUpdate){
+        int energy = player.getEnergy();
+        energy += energyUpdate;
+        player.setEnergy(energy);
+    }
+
     public String helpPlayer(){
         return Color.BRIGHT_GREEN + """
                 Here is some help for you. Hopefully this will make your journey easier:
@@ -116,10 +145,12 @@ public class Adventure {
                 6) Type 'drop', to drop an item from your inventory.
                 7) Type 'inventory' or 'inv', to see the list of items that you've collected.
                 8) Type 'inspect', to get a description of the item.
+                9) Type 'break' or 'b', to take a break.
                 I wish you the best of luck!
                 XOXO, Gossip girl \uD83D\uDE09
                """;
     }
+
 
     public static void main(String[] args) {
 

@@ -19,7 +19,7 @@ public class Player {
             currentRoom = currentRoom.getNorth();
             return currentRoom.visitRoom();
         }
-        if(userInput.equals("south") || userInput.equals("s") && getCurrentRoom().hasSouth()){
+        if((userInput.equals("south") || userInput.equals("s")) && getCurrentRoom().hasSouth()){
             currentRoom = currentRoom.getSouth();
             return currentRoom.visitRoom();
         }

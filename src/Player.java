@@ -36,10 +36,11 @@ public class Player {
     }
 
     // returns a formatted string with info about the player
-    // TODO: add info to getInfo
+    // TODO: add info to getInfo, add energy?
     public String getInfo() {
         return "Health: \t" + HP + "/" + maxHP + "\n" +
-                "Weight: \t" + weight + "/" + weightLimit + "\n";
+                "Weight: \t" + weight + "/" + weightLimit + "\n" +
+                "Energy: \t" + energy + "/100\t";
     }
 
     public String getFormattedInventory() {
@@ -102,7 +103,7 @@ public class Player {
         return maxHP;
     }
 
-    public void setMaxHP(int energy) {
+    public void setMaxHP(int maxHP) {
         this.maxHP = maxHP;
     }
 

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
     private int HP;
-    private int maxHP = 5;
+    private int maxHP = 50;
     private Room currentRoom;
     private int weight;
     private final int weightLimit = 25;

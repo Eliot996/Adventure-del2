@@ -56,7 +56,7 @@ public class Adventure {
                 System.out.println(look());
             }else
 
-                if (userInput.startsWith("help") || userInput.startsWith("h")){
+                if (userInput.startsWith("help")){
                 System.out.println(helpPlayer());
             }else
 
@@ -97,7 +97,10 @@ public class Adventure {
 
                     if(userInput.startsWith("break") || userInput.startsWith("b")){
                         takeABreak();
-                    }
+                    } else
+                        if(userInput.startsWith("health")){
+                            System.out.println(health());
+                        }
 
             else{
                     System.out.println("I don't understand that. Please try again :)");
@@ -119,6 +122,10 @@ public class Adventure {
         }
 
         return "There is no item by that name in your inventory";
+    }
+
+    public String health(){
+        return "Health: \t" + player.getHP() + "/" + player.getMaxHP();
     }
 
     //Updates energyUpdate with 25 points.

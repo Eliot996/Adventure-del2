@@ -56,7 +56,7 @@ public class Adventure {
                 System.out.println(look());
             }else
 
-                if (userInput.startsWith("help")){
+                if (userInput.startsWith("help") || userInput.startsWith("h")){
                 System.out.println(helpPlayer());
             }else
 
